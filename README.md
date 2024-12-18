@@ -1,25 +1,23 @@
 # FP-Big-Data-DataLakehouse
 
-Project Overview
+## Project Overview
 Proyek ini bertujuan untuk melakukan klasterisasi pelanggan menggunakan data streaming real-time. Arsitektur solusi terdiri dari komponen utama seperti Kafka, MinIO, PySpark ML, dan Streamlit. Data akan dikirim, disimpan, dan diproses untuk menghasilkan output berupa klaster pelanggan.
 
-Repository Structure
+## Architecture Diagram
 
-Daftar Isi : 
 
-Architecture Diagram
-
-Komponen Utama:
+## Komponen Utama:
 1. Dataset: Data awal dalam format CSV atau JSON.
 2. Kafka Broker: Untuk streaming data real-time.
 3. MinIO: Penyimpanan data mentah dan versi delta.
 4. PySpark ML: Digunakan untuk proses klasterisasi.
 5. Streamlit : Sebagai UI untuk klasterisasi
-6. Output: Hasil berupa klaster pelanggan
+6. Deepnote : Untuk daily routine (Deepnote Scheduler)
+7. Output: Hasil berupa klaster pelanggan
 
 
-Requirements
-Software Dependencies:
+## Requirements
+### Software Dependencies:
 1. Docker (Optional for Kafka and MinIO setup)
 2. Apache Kafka
 3. MinIO
@@ -30,8 +28,8 @@ Software Dependencies:
 	- boto3
 	- pyspark
 
-Project Setup
-Step 1: Setup Kafka Broker
+## Project Setup
+### Step 1: Setup Kafka Broker
 Using Docker :
 Syarat : 
 1. Docker harus sudah terinstal di sistem
@@ -91,7 +89,7 @@ docker ps
 docker exec -it <kafka_container_id> kafka-topics.sh --create --topic test-topic --partitions 1 --replication-factor 1 --zookeeper zookeeper:2181
 ```
 
-Step 2: Setup MinIO (Object Storage)
+### Step 2: Setup MinIO (Object Storage)
 1. Install MinIO:
 ```
 wget https://dl.min.io/server/minio/release/linux-amd64/minio
@@ -110,7 +108,7 @@ pip install pyspark
 Code Pyspark Machine Learning ada pada folder diatas
 ```
 
-Step 3 
+### Step 3 
 1. Instal Streamlit 
 ```
 pip install streamlit
@@ -120,26 +118,26 @@ pip install streamlit
 Code ada di folder diatas = 'Brazillian_E-commerce_Project.py
 ```
 
-Running the Project
+## Running the Project
 1. Jalankan Kafka dan buat topik.
-Jalankan kafka dan zookeeper menggunakan docker ```docker compose up -d```
+Jalankan kafka dan zookeeper menggunakan docker ```docker compose up -d```<br>
 notes : pastikan kafka, zookeeper sudah running
 
-1. Streaming data ke Kafka.
+2. Streaming data ke Kafka.
 Melakukan streaming dengan menjalankan ```producer.py``` untuk load dataset dan setelah itu jalankan ```consumer.py``` untuk membuat batch untuk menyimpan dataset yang akan langsung disimpan di minio
 
 3. Jalankan MinIO sebagai object storage.
-Jalankan minio di terminal dengan command ```minio server start``` dan buka halaman web minio pada ```http://localhost:9000``` 
+Jalankan minio di terminal dengan command ```minio server start``` dan buka halaman web minio pada ```http://localhost:9000```<br>
 Pada halaman web minio akan otomatis ada hasil dari streaming tadi yaitu berbentuk batch
 
 4. Proses data dengan PySpark ML.
-Membuat code Machine learning ( ex: use Kaggle ) yang akan secara langsung terhubung dengan minio dan bisa membaca data yang ada di minio. 
+Membuat code Machine learning ( ex: use Kaggle ) yang akan secara langsung terhubung dengan minio dan bisa membaca data yang ada di minio.<br>
 Notes : untuk menghubungkan bisa menggunakan ```ngrok http 9000``` atau langsung dari localhost minio
 
-Hasil running pyspark ML :
-Notebook big_data2.ipynb digunakan untuk melakukan eksplorasi data, preprocessing, melatih model, dan menghasilkan file seperti:
-Brazilian_Ecommerce_Classification.bkl (model klasifikasi).
-Brazilian_Ecommerce_Clustering.bkl (model clustering).
+Hasil running pyspark ML :<br>
+Notebook big_data2.ipynb digunakan untuk melakukan eksplorasi data, preprocessing, melatih model, dan menghasilkan file seperti:<br>
+- Brazilian_Ecommerce_Classification.bkl (model klasifikasi).
+- Brazilian_Ecommerce_Clustering.bkl (model clustering).
 File-file ini akan digunakan sebagai input untuk aplikasi Streamlit.
 
 5. Jalankan kode python menggunakan streamlit untuk mengarahkan ke UI untuk operasi EDA, Clustering dan Classification. 
@@ -148,6 +146,9 @@ File-file ini akan digunakan sebagai input untuk aplikasi Streamlit.
 python3 streamlit Brazilian_Ecommerce_Project.py
 ```
 Notes : pada folder yang sama juga harus terdapat file Brazilian_Ecommerce_Clustering dan Brazilian_Ecommerce_Classification
+
+6. Melakukan pengaturan scheduling (Deepnote Scheduler) untuk mengolah datanya realtime
+
 
 
 
