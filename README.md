@@ -4,7 +4,7 @@
 Proyek ini bertujuan untuk melakukan klasterisasi pelanggan menggunakan data streaming real-time. Arsitektur solusi terdiri dari komponen utama seperti Kafka, MinIO, PySpark ML, dan Streamlit. Data akan dikirim, disimpan, dan diproses untuk menghasilkan output berupa klaster pelanggan.
 
 ## Architecture Diagram
-
+![Untitled Diagram drawio](https://github.com/user-attachments/assets/af435289-8dc1-4b35-a4c1-fb1fe4f74a58)
 
 ## Komponen Utama:
 1. Dataset: Data awal dalam format CSV atau JSON.
@@ -148,6 +148,8 @@ python3 streamlit Brazilian_Ecommerce_Project.py
 Notes : pada folder yang sama juga harus terdapat file Brazilian_Ecommerce_Clustering dan Brazilian_Ecommerce_Classification
 
 6. Melakukan pengaturan scheduling (Deepnote Scheduler) untuk mengolah datanya realtime
+![daily_running](https://github.com/user-attachments/assets/49e29ebf-4b88-41d3-8726-e84b89c2d948)
+![pengaturan_daily_running](https://github.com/user-attachments/assets/0c95fba6-162f-4a91-89fd-48dee9a28d00)
 
 
 
