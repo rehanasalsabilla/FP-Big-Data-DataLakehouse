@@ -43,7 +43,9 @@ Proyek ini bertujuan untuk melakukan **klasterisasi pelanggan** menggunakan data
    - `boto3` 🛠️
    - `pyspark` 🔍
 
+
 ---
+
 
 ## ⚡ Project Setup
 
@@ -105,6 +107,8 @@ docker ps
 docker exec -it <kafka_container_id> kafka-topics.sh --create --topic test-topic --partitions 1 --replication-factor 1 --zookeeper zookeeper:2181
 ```
 
+---
+
 ### ⚙️ Step 2: Setup MinIO
 1. Install MinIO:
 ```
@@ -113,6 +117,8 @@ chmod +x minio
 ./minio server ./data
 ```
 2. Akses MinIO di 🌐 [http://localhost:9000](http://localhost:9000).
+
+---
 
 ### ⚙️ Step 3: Klasterisasi dengan PySpark ML
 1. Setup PySpark
@@ -124,6 +130,8 @@ pip install pyspark
 Code Pyspark Machine Learning ada pada folder diatas
 ```
 
+---
+
 ### ⚙️ Step 4: Setup Streamlit
 1. Instal Streamlit 
 ```
@@ -133,6 +141,10 @@ pip install streamlit
 ```
 Code ada di folder diatas = 'Brazillian_E-commerce_Project.py
 ```
+
+
+---
+
 
 ## 🏃‍♂️ Running the Project
 ### 1. **Jalankan Kafka, zookeper dan buat topik**  
@@ -144,6 +156,7 @@ notes : pastikan kafka, zookeeper sudah running
 #### Running Docker
 ![Running Docker](https://github.com/user-attachments/assets/373a449c-6341-43ce-b92f-8d48ddc1e7b7)
 
+---
 
 ### 2. **Streaming Data ke Kafka**
 Melakukan streaming dengan menjalankan ```producer.py``` untuk load dataset dan setelah itu jalankan ```consumer.py``` untuk membuat batch untuk menyimpan dataset yang akan langsung disimpan di minio
@@ -157,6 +170,7 @@ Melakukan streaming dengan menjalankan ```producer.py``` untuk load dataset dan 
 #### start+result consumer py
 ![start+result consumer py](https://github.com/user-attachments/assets/230fa7d6-4387-43c1-bf76-7438bb3e3e95)
 
+---
 
 ### 3. **Jalankan MinIO sebagai object storage.**
 Jalankan minio di terminal dengan command ```minio server start``` dan buka halaman web minio pada ```http://localhost:9000```<br>
@@ -168,6 +182,7 @@ Pada halaman web minio akan otomatis ada hasil dari streaming tadi yaitu berbent
 #### Localhost-minio-server
 [Localhost-minio-server](https://github.com/user-attachments/assets/8b44b565-9e05-4660-9c5f-1df92db1d429)
 
+---
 
 ### 4. **Proses data dengan PySpark ML.**
 Membuat code Machine learning ( ex: use Kaggle ) yang akan secara langsung terhubung dengan minio dan bisa membaca data yang ada di minio.<br>
@@ -179,6 +194,7 @@ Notebook big_data2.ipynb digunakan untuk melakukan eksplorasi data, preprocessin
 - Brazilian_Ecommerce_Clustering.bkl (model clustering). <br>
 File-file ini akan digunakan sebagai input untuk aplikasi Streamlit.
 
+---
 
 ### 5. **Melakukan pengaturan scheduling (Deepnote Scheduler) untuk mengolah datanya realtime**
 
@@ -188,6 +204,7 @@ File-file ini akan digunakan sebagai input untuk aplikasi Streamlit.
 #### pengaturan_daily_running
 ![pengaturan_daily_running](https://github.com/user-attachments/assets/0c95fba6-162f-4a91-89fd-48dee9a28d00)
 
+---
 
 ### 6. **Jalankan kode python menggunakan streamlit untuk mengarahkan ke UI untuk operasi EDA, Clustering dan Classification.** 
 
@@ -200,6 +217,7 @@ Notes : pada folder yang sama juga harus terdapat file Brazilian_Ecommerce_Clust
 ![start streamlit](https://github.com/user-attachments/assets/716a4abd-0f88-4597-b629-849355454eca)
 
 
+---
 
 
 ## 🌟 Output (Streamlit UI)
@@ -235,6 +253,8 @@ Notes : pada folder yang sama juga harus terdapat file Brazilian_Ecommerce_Clust
 ![ui eda-9](https://github.com/user-attachments/assets/d2808f38-9f7f-4970-8645-592967797412)
 
 
+---
+
 
 ## 📚 **Page Classification**
 ### 🚦 Klasifikasi Pelanggan
@@ -243,6 +263,9 @@ Notes : pada folder yang sama juga harus terdapat file Brazilian_Ecommerce_Clust
 ![UI classification-1](https://github.com/user-attachments/assets/d07470b2-70dc-4b3c-ab88-b6e7bd4d4e7b)
 #### 2
 ![UI classification-2](https://github.com/user-attachments/assets/60f4f103-979b-458c-8ece-1182c429096c)
+
+
+---
 
 
 ## 🌀 Page Clustering
@@ -260,6 +283,7 @@ Notes : pada folder yang sama juga harus terdapat file Brazilian_Ecommerce_Clust
 #### 4
 ![UI Clustering-input file-2](https://github.com/user-attachments/assets/a0dee858-40b8-42e6-b70d-5a0a0ff284e2)
 
+---
 
 ## 📌 **Catatan Tambahan**
 Pastikan file Brazilian_Ecommerce_Clustering.bkl dan Brazilian_Ecommerce_Classification.bkl tersedia dalam folder yang sama saat menjalankan Streamlit.
