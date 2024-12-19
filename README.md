@@ -159,16 +159,15 @@ notes : pastikan kafka, zookeeper sudah running
 ---
 
 ### 2. **Streaming Data ke Kafka**
-Melakukan streaming dengan menjalankan ```producer.py``` untuk load dataset dan setelah itu jalankan ```consumer.py``` untuk membuat batch untuk menyimpan dataset yang akan langsung disimpan di minio
+Melakukan streaming dengan menjalankan ```producer.py``` untuk load dataset dan setelah itu jalankan ```consumer.py``` dalam bentuk file bash, untuk membuat batch untuk menyimpan dataset yang akan langsung disimpan di minio
 
-#### start producer py
-![start producer py](https://github.com/user-attachments/assets/9c93495e-7315-46d4-aeb0-29b8ad8fce01)
+### **./streaming.sh**
 
-#### Producer Running 🔄  
-![Running producer py](https://github.com/user-attachments/assets/c3e7051d-4615-4456-8c16-84f40ab92ac5)
+#### code streaming.sh 🔄  
+![code streaming sh](https://github.com/user-attachments/assets/3e2742c2-4e6a-4945-855a-f6b8a2851eed)
 
-#### start+result consumer py
-![start+result consumer py](https://github.com/user-attachments/assets/230fa7d6-4387-43c1-bf76-7438bb3e3e95)
+#### command untuk run streaming.sh
+![run streaming sh](https://github.com/user-attachments/assets/4bddef33-ef52-46a4-9c25-a76c52e72700)
 
 ---
 
