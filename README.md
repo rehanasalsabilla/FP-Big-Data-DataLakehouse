@@ -122,34 +122,103 @@ Code ada di folder diatas = 'Brazillian_E-commerce_Project.py
 1. Jalankan Kafka dan buat topik.
 Jalankan kafka dan zookeeper menggunakan docker ```docker compose up -d```<br>
 notes : pastikan kafka, zookeeper sudah running
+#### Docker-compose-up
+![Docker-compose-up](https://github.com/user-attachments/assets/e322cda9-2d82-4b21-994c-942da171f8a8)
 
-2. Streaming data ke Kafka.
+#### Running Docker
+![Running Docker](https://github.com/user-attachments/assets/373a449c-6341-43ce-b92f-8d48ddc1e7b7)
+
+3. Streaming data ke Kafka.
 Melakukan streaming dengan menjalankan ```producer.py``` untuk load dataset dan setelah itu jalankan ```consumer.py``` untuk membuat batch untuk menyimpan dataset yang akan langsung disimpan di minio
 
-3. Jalankan MinIO sebagai object storage.
+#### start producer py
+![start producer py](https://github.com/user-attachments/assets/9c93495e-7315-46d4-aeb0-29b8ad8fce01)
+
+#### Running producer py
+![Running producer py](https://github.com/user-attachments/assets/c3e7051d-4615-4456-8c16-84f40ab92ac5)
+
+#### start+result consumer py
+![start+result consumer py](https://github.com/user-attachments/assets/230fa7d6-4387-43c1-bf76-7438bb3e3e95)
+
+
+5. Jalankan MinIO sebagai object storage.
 Jalankan minio di terminal dengan command ```minio server start``` dan buka halaman web minio pada ```http://localhost:9000```<br>
 Pada halaman web minio akan otomatis ada hasil dari streaming tadi yaitu berbentuk batch
 
-4. Proses data dengan PySpark ML.
+#### Start Minio Server
+![Start Minio Server](https://github.com/user-attachments/assets/bd15afea-e2d4-497b-a3a1-02c16ac2fd7f)
+
+#### Localhost-minio-server
+[Localhost-minio-server](https://github.com/user-attachments/assets/8b44b565-9e05-4660-9c5f-1df92db1d429)
+
+6. Proses data dengan PySpark ML.
 Membuat code Machine learning ( ex: use Kaggle ) yang akan secara langsung terhubung dengan minio dan bisa membaca data yang ada di minio.<br>
 Notes : untuk menghubungkan bisa menggunakan ```ngrok http 9000``` atau langsung dari localhost minio
 
 Hasil running pyspark ML :<br>
 Notebook big_data2.ipynb digunakan untuk melakukan eksplorasi data, preprocessing, melatih model, dan menghasilkan file seperti:<br>
 - Brazilian_Ecommerce_Classification.bkl (model klasifikasi).
-- Brazilian_Ecommerce_Clustering.bkl (model clustering).
+- Brazilian_Ecommerce_Clustering.bkl (model clustering). <br>
 File-file ini akan digunakan sebagai input untuk aplikasi Streamlit.
 
-5. Jalankan kode python menggunakan streamlit untuk mengarahkan ke UI untuk operasi EDA, Clustering dan Classification. 
+5. Melakukan pengaturan scheduling (Deepnote Scheduler) untuk mengolah datanya realtime
+
+#### daily_running
+![daily_running](https://github.com/user-attachments/assets/49e29ebf-4b88-41d3-8726-e84b89c2d948)
+
+#### pengaturan_daily_running
+![pengaturan_daily_running](https://github.com/user-attachments/assets/0c95fba6-162f-4a91-89fd-48dee9a28d00)
+
+6. Jalankan kode python menggunakan streamlit untuk mengarahkan ke UI untuk operasi EDA, Clustering dan Classification. 
 
 ```
 python3 streamlit Brazilian_Ecommerce_Project.py
 ```
 Notes : pada folder yang sama juga harus terdapat file Brazilian_Ecommerce_Clustering dan Brazilian_Ecommerce_Classification
 
-6. Melakukan pengaturan scheduling (Deepnote Scheduler) untuk mengolah datanya realtime
-![daily_running](https://github.com/user-attachments/assets/49e29ebf-4b88-41d3-8726-e84b89c2d948)
-![pengaturan_daily_running](https://github.com/user-attachments/assets/0c95fba6-162f-4a91-89fd-48dee9a28d00)
+#### start streamlit
+![start streamlit](https://github.com/user-attachments/assets/716a4abd-0f88-4597-b629-849355454eca)
+
+7. Output ( UI Streamlit )
+#### Page EDA 
+#### 1
+![ui eda-1](https://github.com/user-attachments/assets/d1406872-c33a-42a4-a556-a26cbff88c97)
+#### 2
+![ui eda-2](https://github.com/user-attachments/assets/47aea65e-4978-4331-beb3-146b447cd3df)
+#### 3
+![ui eda-3](https://github.com/user-attachments/assets/ca7bd877-a9f2-41d8-8bc1-4083fd347b4f)
+#### 4
+![ui eda-4](https://github.com/user-attachments/assets/ce4db1e3-5814-41de-a017-207777bba48f)
+#### 5
+![ui eda-5](https://github.com/user-attachments/assets/a60fb18a-cdfe-4d33-b367-4d4001e204fd)
+#### 6
+![ui eda-6](https://github.com/user-attachments/assets/e84e9675-3cbe-4d32-93d1-01d96c58451c)
+#### 7
+![ui eda-7](https://github.com/user-attachments/assets/8d9ec190-0fe6-4da7-8951-f6b3b54b5e2f)
+#### 8
+![ui eda-8](https://github.com/user-attachments/assets/ab526ddd-2046-4700-842e-c212c1ba3a29)
+#### 9
+![ui eda-9](https://github.com/user-attachments/assets/d2808f38-9f7f-4970-8645-592967797412)
+
+
+#### Page Classification
+#### 1
+![UI classification-1](https://github.com/user-attachments/assets/d07470b2-70dc-4b3c-ab88-b6e7bd4d4e7b)
+#### 2
+![UI classification-2](https://github.com/user-attachments/assets/60f4f103-979b-458c-8ece-1182c429096c)
+
+
+#### Page Clustering
+#### 1
+![UI Clustering-input data-1](https://github.com/user-attachments/assets/b118972b-9492-4d18-9eca-f3987170e000)
+#### 2
+![UI Clustering-input data-2](https://github.com/user-attachments/assets/399589cf-7ac7-46a8-91ac-193694897979)
+#### 3
+![UI Clustering-input file-1](https://github.com/user-attachments/assets/f3910fc5-ac07-40b8-bdb4-d4960029450b)
+#### 4
+![UI Clustering-input file-2](https://github.com/user-attachments/assets/a0dee858-40b8-42e6-b70d-5a0a0ff284e2)
+
+
 
 
 
