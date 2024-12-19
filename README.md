@@ -260,10 +260,10 @@ Notes : pada folder yang sama juga harus terdapat file Brazilian_Ecommerce_Clust
 ### 🚦 Klasifikasi Pelanggan
 
 #### 1
-![UI classification-1](https://github.com/user-attachments/assets/d07470b2-70dc-4b3c-ab88-b6e7bd4d4e7b)
-#### 2
-![UI classification-2](https://github.com/user-attachments/assets/60f4f103-979b-458c-8ece-1182c429096c)
+![Classification-1](https://github.com/user-attachments/assets/b3ab0efb-5ae0-4fa3-8498-ac1c7d47d4b4)
 
+#### 2
+![classification-2](https://github.com/user-attachments/assets/65fad653-7cbe-4a18-925e-73ac7953d24a)
 
 ---
 
