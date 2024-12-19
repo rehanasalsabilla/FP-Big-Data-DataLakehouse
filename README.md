@@ -1,5 +1,14 @@
 # 🚀 FP-Big-Data-DataLakehouse
 
+## Kelompok 3 - Big Data (B)
+Anggota : 
+| Nama           | NRP           |
+|----------------|---------------|
+| Mutiara Nurhaliza  | 5027221010    |
+| Rehana Putri Salsabilla   | 5027221015   |
+| Etha Felisya Br Purba  | 5027221017 |
+| Salsabila Amalia Harjanto  | 5027221023  |
+
 ## 📝 Project Overview
 Proyek ini bertujuan untuk melakukan **klasterisasi pelanggan** menggunakan data streaming real-time. Solusi ini menggabungkan berbagai teknologi modern seperti **Kafka**, **MinIO**, **PySpark ML**, dan **Streamlit** untuk menghasilkan klaster pelanggan secara efisien. 💡
 
