@@ -1,11 +1,11 @@
-# ⚡ FP-Big-Data-DataLakehouse
+# 🚀 FP-Big-Data-DataLakehouse
 
-## 📜 Project Overview
-Proyek ini bertujuan untuk melakukan **klasterisasi pelanggan** menggunakan data streaming real-time. Solusi ini mengintegrasikan teknologi modern seperti **Kafka**, **MinIO**, **PySpark ML**, dan **Streamlit** untuk mengelola data dengan efisien dan akurat.
+## 📝 Project Overview
+Proyek ini bertujuan untuk melakukan **klasterisasi pelanggan** menggunakan data streaming real-time. Solusi ini menggabungkan berbagai teknologi modern seperti **Kafka**, **MinIO**, **PySpark ML**, dan **Streamlit** untuk menghasilkan klaster pelanggan secara efisien. 💡
 
 ---
 
-## 🔧 Architecture Diagram
+## 🏗️ Architecture Diagram
 ![Architecture Diagram](https://github.com/user-attachments/assets/af435289-8dc1-4b35-a4c1-fb1fe4f74a58)
 
 ---
@@ -25,10 +25,10 @@ Proyek ini bertujuan untuk melakukan **klasterisasi pelanggan** menggunakan data
 
 ### 📦 Software Dependencies:
 1. 🐳 **Docker** *(Opsional untuk Kafka dan MinIO setup)*.
-2. 🔢 **Apache Kafka**.
+2. 🖥️ **Apache Kafka**.
 3. ☁️ **MinIO**.
 4. 🔥 **Apache Spark** (PySpark).
-5. 🖊️ **Python Libraries**:
+5. 🐍 **Python Libraries**:
    - `pandas` 📄
    - `kafka-python` 📡
    - `boto3` 🛠️
@@ -194,46 +194,65 @@ Notes : pada folder yang sama juga harus terdapat file Brazilian_Ecommerce_Clust
 
 
 ## 🌟 Output (Streamlit UI)
-#### Page EDA 
+
+## 🛠️ **Page EDA** 
+### 📊 Grafik Analisis
+
 #### 1
 ![ui eda-1](https://github.com/user-attachments/assets/d1406872-c33a-42a4-a556-a26cbff88c97)
+
 #### 2
 ![ui eda-2](https://github.com/user-attachments/assets/47aea65e-4978-4331-beb3-146b447cd3df)
+
 #### 3
 ![ui eda-3](https://github.com/user-attachments/assets/ca7bd877-a9f2-41d8-8bc1-4083fd347b4f)
+
 #### 4
 ![ui eda-4](https://github.com/user-attachments/assets/ce4db1e3-5814-41de-a017-207777bba48f)
+
 #### 5
 ![ui eda-5](https://github.com/user-attachments/assets/a60fb18a-cdfe-4d33-b367-4d4001e204fd)
+
 #### 6
 ![ui eda-6](https://github.com/user-attachments/assets/e84e9675-3cbe-4d32-93d1-01d96c58451c)
+
 #### 7
 ![ui eda-7](https://github.com/user-attachments/assets/8d9ec190-0fe6-4da7-8951-f6b3b54b5e2f)
+
 #### 8
 ![ui eda-8](https://github.com/user-attachments/assets/ab526ddd-2046-4700-842e-c212c1ba3a29)
+
 #### 9
 ![ui eda-9](https://github.com/user-attachments/assets/d2808f38-9f7f-4970-8645-592967797412)
 
 
-#### Page Classification
+
+## 📚 **Page Classification**
+### 🚦 Klasifikasi Pelanggan
+
 #### 1
 ![UI classification-1](https://github.com/user-attachments/assets/d07470b2-70dc-4b3c-ab88-b6e7bd4d4e7b)
 #### 2
 ![UI classification-2](https://github.com/user-attachments/assets/60f4f103-979b-458c-8ece-1182c429096c)
 
 
-#### Page Clustering
+## 🌀 Page Clustering
+### 🔍 Input Data untuk Klasterisasi
+
 #### 1
 ![UI Clustering-input data-1](https://github.com/user-attachments/assets/b118972b-9492-4d18-9eca-f3987170e000)
+
 #### 2
 ![UI Clustering-input data-2](https://github.com/user-attachments/assets/399589cf-7ac7-46a8-91ac-193694897979)
+
 #### 3
 ![UI Clustering-input file-1](https://github.com/user-attachments/assets/f3910fc5-ac07-40b8-bdb4-d4960029450b)
+
 #### 4
 ![UI Clustering-input file-2](https://github.com/user-attachments/assets/a0dee858-40b8-42e6-b70d-5a0a0ff284e2)
 
 
-
-
+## 📌 **Catatan Tambahan**
+Pastikan file Brazilian_Ecommerce_Clustering.bkl dan Brazilian_Ecommerce_Classification.bkl tersedia dalam folder yang sama saat menjalankan Streamlit.
 
 
